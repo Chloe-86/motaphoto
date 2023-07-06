@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --color-button: #D8D8D8;
+  --menu: #E00000;
+  --black: black;
+  --white: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+header, nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav, nav nav {
+  font-family: "Space Mono", monospace;
+  height: 80px;
+  z-index: 1000;
+  position: sticky;
+}
+header ul, nav ul {
+  gap: 43px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header ul .toggle, nav ul .toggle {
+  display: none;
+  cursor: pointer;
+}
+
+footer ul {
+  border-top: 1px solid #000000;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  gap: 86px;
+  font-family: "Space Mono", monospace;
+}/*# sourceMappingURL=main.css.map */
