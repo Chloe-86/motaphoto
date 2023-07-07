@@ -9,8 +9,8 @@
 </head>
 
 <body <?php body_class('site'); ?>>
-<?php include('modal.php'); ?>
-    
+    <?php include('modal.php'); ?>
+
     <header class="site-header">
 
         <?php
@@ -35,8 +35,7 @@
         }
         ?>
 
-        <nav>
-            <div class="toggle"></div>
+        <nav id="nav" role="navigation">
             <?php
             $menu_args = array(
                 'theme_location' => 'main', // Emplacement du menu à afficher
@@ -49,7 +48,7 @@
             $menu = wp_nav_menu($menu_args);
             echo $menu;
             ?>
-
+            <div id="icons"></div>
         </nav>
     </header>
 

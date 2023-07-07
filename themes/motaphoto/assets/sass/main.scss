@@ -28,31 +28,28 @@ a{
     color: var(--black);
 }
 // header
-header, nav{
+
+// navigation
+header{
     display: flex;
-    align-items: center;
+    justify-content:  space-between;
+    align-items:center;
+    font-family: 'Space Mono';
+}
+nav ul {
+    display: flex;
     justify-content: space-between;
-
-    nav{
-        font-family: 'Space Mono', monospace;
-        height: 80px;
-        z-index: 1000;
-        position: sticky;
-    }
-    ul{
-        gap: 43px;
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        .toggle{
-            display: none;
-            cursor: pointer;
-        }
-        
-    }
-
+    gap: 43px;
+  }
+  #icons {
+    cursor: pointer;
+    display: none;
+  }
+  a,
+a:visited {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 //modal
@@ -181,8 +178,6 @@ button{
     width: 100%;
 }
 
-
-
 // hero section
 
 // footer
@@ -194,3 +189,50 @@ footer ul{
     gap: 86px;
     font-family: 'Space Mono', monospace;
 }
+
+@media (max-width: 768px) {
+    
+   header{
+    padding: 0 40px;
+   }
+    #icons {
+      display: block;
+    }
+    #icons:before {
+      content: "\2630";
+    }
+    .active #icons:before {
+      content: "\2715";
+    }
+    nav ul {
+      position: fixed;
+      right: -100%;
+      top: 10%;
+      flex-direction: column;
+      justify-content: center;
+      background: red;
+      width: 100%;
+      text-align: center;
+      transition: 0.25s;
+      height: 100%;
+
+        li {
+            padding: 3px 0;
+
+            a {
+                color: white;
+              }
+        }
+
+    }
+  
+  
+    nav.active ul {
+      right: 0;
+      
+      li a {
+        color: white;
+      }
+    }
+    
+  }
