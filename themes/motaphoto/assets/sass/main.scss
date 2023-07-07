@@ -3,10 +3,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
+  //px: vw = (px / max-width) * 100
+  // color
     --color-button: #D8D8D8;
-    --menu: #E00000;
+    --red: #E00000;
     --black: black;
     --white: white;
+    --grey: #333;
+    --modalcontact:  rgba(0,0,0,0.5);
+    // font
+    --font-pop: 'Poppins', sans-serif;
+    --font-space:'Space Mono', monospace;
+    // font-size: sur une base de 1440px en max-width
+    --14: 0.97vw //14px
+    --16: 1.11vw //16px 
+    --44: 3.05vw //44px
 }
 *{
     margin: 0;
@@ -27,32 +38,29 @@ a{
     text-decoration: none;
     color: var(--black);
 }
-// header
+// -------------------------------------------HEADER------------------------------------------------
 
-// navigation
+
 header{
     display: flex;
     justify-content:  space-between;
     align-items:center;
     font-family: 'Space Mono';
 }
+//---------------------NAVIGATION
 nav ul {
-    display: flex;
-    justify-content: space-between;
-    gap: 43px;
-  }
-  #icons {
-    cursor: pointer;
-    display: none;
-  }
-  a,
-a:visited {
-  color: black;
-  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 43px;
   text-transform: uppercase;
 }
+#icons {
+  cursor: pointer;
+  display: none;
+}
 
-//modal
+
+//---------------------MODALE DE CONTACT
 
 .overlay{
     position: fixed; /* Sit on top of the page content */
@@ -63,7 +71,7 @@ a:visited {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    background-color:var(--modalcontact);/* Black background with opacity */
     z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 
@@ -73,8 +81,8 @@ a:visited {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
+    font-size: var(--14);
+    font-family: var(--font-pop);
 
     }
     input{
@@ -92,7 +100,7 @@ a:visited {
         outline: none;
         border: transparent;
         background-color: none;
-        font-family: 'Space Mono', monospace;
+        font-family: var(--font-space) ;
         font-weight: 400;
     }
     form[label]{
@@ -119,47 +127,55 @@ a:visited {
     background-color: var(--white);
 
     span.bg{
-        background-image: url('../../../uploads/2023/06/contact.png');
+      background-image: url('../images/contact.png');
         display: block;
         height: 107px;
         margin-bottom: 45px;
     }
 }
 
-// .hide{
-//     display: none;
-// }
 
-//generic button
+//-----------------------------GENERIC BUTTON
 
 /* generic buttons transition noir*/
 
 button{
     cursor: pointer;
 }
-  .wrapper .wrapper-button {
+
+// single page btn
+.btn-random {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 71px;
+  margin-bottom: 110px;
+}
+.wrapper {
+
+  .wrapper-button {
     display: block;
     width: 106px;
     height: 38px;
     font-family: Space Mono;
-    font-size: 14px;
+    font-size: var(--14);
     text-decoration: none;
-    color: #333;
-    border-left: 2px solid #000000;
+    color: var(--grey);
+    border-left: 2px solid var(--black);
     text-align: center;
     position: relative;
     transition: all .35s;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+  }
 
-.wrapper .wrapper-button span {
-    position: relative;
-    z-index: 2;
-}
+    .wrapper-button span {
+      position: relative;
+      z-index: 2;
+  }
 
-.wrapper .wrapper-button:after {
+  .wrapper-button:after {
     position: absolute;
     content: "";
     top: 0;
@@ -168,21 +184,22 @@ button{
     height: 100%;
     background: #000000;
     transition: all .35s;
-}
-
-.wrapper .wrapper-button:hover {
-    color: #fff;
-}
-
-.wrapper .wrapper-button:hover:after {
+  }
+    .wrapper-button:hover {
+    color:var(--white);
+  }
+  .wrapper-button:hover:after {
     width: 100%;
+  }
 }
+.wrapper.randomModifyer .wrapper-button{
+  width: 192px!important;
+  height: 38px!important;
+} 
 
-// hero section
-
-// footer
+// ----------------------FOOTER
 footer ul{
-    border-top: 1px solid #000000;
+    border-top: 1px solid var(--black);
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -190,6 +207,8 @@ footer ul{
     font-family: 'Space Mono', monospace;
 }
 
+
+// -------------------------------------------MEDIA QUERIES------------------------------------------------
 @media (max-width: 768px) {
     
    header{
@@ -210,7 +229,7 @@ footer ul{
       top: 10%;
       flex-direction: column;
       justify-content: center;
-      background: red;
+      background: var(--red);
       width: 100%;
       text-align: center;
       transition: 0.25s;
@@ -220,7 +239,7 @@ footer ul{
             padding: 3px 0;
 
             a {
-                color: white;
+                color: var(--white);
               }
         }
 
@@ -231,9 +250,189 @@ footer ul{
       right: 0;
       
       li a {
-        color: white;
-        font-size: 44px;
+        color: var(--white);
+        font-size: var(--44);
       }
     }
     
   }
+
+
+  // -------------------------------------------SINGLE PAGE------------------------------------------------
+
+  .container-single.adjust{
+    margin: 32px 146px 40px 146px;
+}
+.post__content.single{
+    display: flex;
+    flex-direction: row-reverse;
+
+}
+.single-img{
+    width: 50%;
+}
+.single-img img{
+object-fit: scale-down;
+height: 100%;
+width: 100%;
+}
+
+.txt{
+    font-family: 'Space mono', arial;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    padding-bottom: 43px;
+    border-bottom: 1px solid var(--black);
+    width: 50%;
+}
+h2.title{
+    margin-bottom: 40px;
+    color: var(--black);
+    font-size: 4.58vw;
+    font-style: italic;
+    text-transform: uppercase;
+}
+.txt .acf{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+/* single pagination */
+.navigation-links{
+padding-top: 10px;
+padding-bottom: 10px;
+ }
+ 
+div.navigation-links > div.next > a:nth-child(1) > img, div.navigation-links > div.previous > a:nth-child(1) > img{
+    object-fit: contain;
+    height: 71px;
+    width: 100%;
+}
+div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-links > div.previous > a:nth-child(1) > img:hover{
+    visibility: hidden;
+}
+.after{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.after-txt{
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-family: 'Poppins';
+}
+.after-txt p{
+    font-size:var(--black);
+    font-weight: 300;
+}
+
+.after-txt button{
+    color: #000;
+    font-size: var(--14);
+    font-family: Space Mono;
+    letter-spacing: 1.4px;
+    outline: none;
+    border: transparent;
+    padding: 5px 36px ;
+    border-left: 4px solid var(--black);
+    background-color: transparent;
+}
+.navigation-links{
+    display: flex;
+}
+.next, .previous{
+    text-align: center;
+    max-width: 150px;
+}
+
+// -------------------------------------PHOTO BLOCKS----------------------------------------------
+
+.randomPictures h2{
+  padding-top: 77px;
+  margin-bottom: 40px;
+  font-family: 'Space Mono', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+
+}
+
+.randomPhotos{
+  display: flex;
+  justify-content: center;
+  gap: 21px;
+}
+
+/*  lightbox */
+.container- lightbox{
+  position: relative;
+
+    .lightbox-img-block{
+      width: 564px;
+      height: 495px;     
+
+        img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        }
+    }
+
+
+    .pre-lightbox-text{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #00000058;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      visibility: hidden;
+
+          
+      .camera-top{
+        display: flex;
+        justify-content: right;
+        padding-right: 15px;
+        padding-top: 11px;
+      }
+
+
+      .eye{
+        /* background-image: url('./images/eye.svg'); */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-position: center;
+        background-repeat: no-repeat; */
+      }
+        
+      .txt-bottom{
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        font-family: 'Poppins';
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0 20px 20px 12px;
+        color: white!important;
+        
+          a {
+            color: #fff!important;
+          }
+    }
+  }
+}
+
+.container- lightbox:hover .pre- lightbox-text{
+  visibility: visible!important;
+  z-index: 100;
+}
