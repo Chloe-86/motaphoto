@@ -8,7 +8,7 @@ function portfolio_register_assets()
     // Déclarer mon JS
     wp_enqueue_script(
         'monscript',
-        get_template_directory_uri() . 'assets/js/script.js',
+        get_template_directory_uri() . '/assets/js/script.js',
         array('jquery'),
         '1.0',
         true
@@ -16,7 +16,7 @@ function portfolio_register_assets()
     // Déclarer le JS de la lightbox
     wp_enqueue_script(
         'lightbox',
-        get_template_directory_uri() . 'assets/js/lightbox.js',
+        get_template_directory_uri() . '/assets/js/lightbox.js',
         array(),
         '1.0',
         true
@@ -24,7 +24,7 @@ function portfolio_register_assets()
     // Déclarer le JS de l'ajax
     wp_enqueue_script(
         'ajax',
-        get_template_directory_uri() . 'assets/js/ajax.js',
+        get_template_directory_uri() . '/assets/js/ajax.js',
         array('jquery'),
         '1.0',
         true
@@ -62,4 +62,15 @@ function theme_register_menus() {
     
     add_action( 'after_setup_theme', 'theme_register_menus' );
     
+    
+
+    function add_menu_item_atts($atts, $item, $args) {
+        if ($item->menu_order === 3) {
+            $atts['id'] .= 'formContact';
+            $atts['class'].= 'form-contact-class';
+           
+        }
+        return $atts;
+    }
+    add_filter('nav_menu_link_attributes', 'add_menu_item_atts', 10, 3);
     

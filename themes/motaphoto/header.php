@@ -9,7 +9,7 @@
 </head>
 
 <body <?php body_class('site'); ?>>
-    
+<?php include('modal.php'); ?>
     
     <header class="site-header">
 
