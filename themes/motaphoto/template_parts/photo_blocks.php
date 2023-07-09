@@ -60,7 +60,7 @@
                                         <p><?php echo the_terms($id, 'categorie', false); ?></p>
                                     </div>
                                 </div>
-                                <div class="ligthbox-img-block">
+                                <div class="lightbox-img-block">
                                     <img class="" src="<?php echo esc_url($image_url); ?>" alt="">
                                 </div>
                               

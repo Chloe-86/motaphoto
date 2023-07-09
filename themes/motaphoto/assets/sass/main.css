@@ -276,6 +276,7 @@ h2.title {
 .navigation-links {
   padding-top: 10px;
   padding-bottom: 10px;
+  position: relative;
 }
 
 div.navigation-links > div.next > a:nth-child(1) > img, div.navigation-links > div.previous > a:nth-child(1) > img {
@@ -285,15 +286,12 @@ div.navigation-links > div.next > a:nth-child(1) > img, div.navigation-links > d
   width: 100%;
 }
 
-div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-links > div.previous > a:nth-child(1) > img:hover {
-  visibility: hidden;
-}
-
 .after {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
+  height: 119px;
 }
 
 .after-txt {
@@ -344,15 +342,15 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
   gap: 21px;
 }
 
-/* lightbox */
+/*  lightbox */
 .container-lightbox {
   position: relative;
 }
-.container-lightbox .ligthbox-img-block {
+.container-lightbox .lightbox-img-block {
   width: 564px;
   height: 495px;
 }
-.container-lightbox .ligthbox-img-block img {
+.container-lightbox .lightbox-img-block img {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
@@ -377,14 +375,11 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
   padding-top: 11px;
 }
 .container-lightbox .pre-lightbox-text .eye {
-  /* background-image: url('./images/eye.svg'); */
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-position: center;
-  background-repeat: no-repeat; */
 }
 .container-lightbox .pre-lightbox-text .txt-bottom {
   display: flex;

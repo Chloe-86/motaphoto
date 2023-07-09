@@ -59,8 +59,7 @@ endif; ?>
 			$previous_post = get_previous_post();
 			if (!empty($previous_post)) {
 				$previous_thumbnail = get_the_post_thumbnail($previous_post->ID, 'thumbnail');
-				$upload_dir = wp_get_upload_dir();
-				$svg_path = $upload_dir['baseurl'] . '/2023/06/arrow-left.svg';
+				$svg_path = get_template_directory_uri(). '/assets/images/arrow-left.svg' ;
 				$previous_link = '<a href="' . get_permalink($previous_post->ID) . '">';
 				$previous_link .= '<img  src="' . $svg_path . '" alt="Photo suivante">';
 				$previous_link .= '</a>';
@@ -73,8 +72,7 @@ endif; ?>
 			$next_post = get_next_post();
 			if (!empty($next_post)) {
 				$next_thumbnail = get_the_post_thumbnail($next_post->ID, 'thumbnail');
-				$upload_dir = wp_get_upload_dir();
-				$svg_path = $upload_dir['baseurl'] . '/2023/06/arrow-right.svg';
+				$svg_path = get_template_directory_uri(). '/assets/images/arrow-right.svg' ;
 				$next_link = '<a href="' . get_permalink($next_post->ID) . '">';
 				$next_link .= '<img  src="' . $svg_path . '" alt="Photo suivante">';
 				$next_link .= '</a>';

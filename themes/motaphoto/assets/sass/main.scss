@@ -303,21 +303,26 @@ h2.title{
 .navigation-links{
 padding-top: 10px;
 padding-bottom: 10px;
+position: relative;
  }
  
 div.navigation-links > div.next > a:nth-child(1) > img, div.navigation-links > div.previous > a:nth-child(1) > img{
     object-fit: contain;
     height: 71px;
     width: 100%;
+ 
 }
-div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-links > div.previous > a:nth-child(1) > img:hover{
-    visibility: hidden;
+
+div.navigation-links > div.next > a:nth-child(1) > img, div.navigation-links > div.previous > a:nth-child(1) > img:hover{
+    visibility: hidden; 
 }
+
 .after{
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    height: 119px;
 }
 .after-txt{
     display: flex;
@@ -349,6 +354,8 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
     max-width: 150px;
 }
 
+// pagination
+
 // -------------------------------------PHOTO BLOCKS----------------------------------------------
 
 .randomPictures h2{
@@ -368,7 +375,7 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
 }
 
 /*  lightbox */
-.container- lightbox{
+.container-lightbox{
   position: relative;
 
     .lightbox-img-block{
@@ -381,7 +388,6 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
         width: 100%;
         }
     }
-
 
     .pre-lightbox-text{
       position: absolute;
@@ -405,14 +411,11 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
 
 
       .eye{
-        /* background-image: url('./images/eye.svg'); */
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        /* background-position: center;
-        background-repeat: no-repeat; */
       }
         
       .txt-bottom{
@@ -432,7 +435,8 @@ div.navigation-links > div.next > a:nth-child(1) > img:hover, div.navigation-lin
   }
 }
 
-.container- lightbox:hover .pre- lightbox-text{
+.container-lightbox:hover .pre-lightbox-text{
   visibility: visible!important;
   z-index: 100;
 }
+
